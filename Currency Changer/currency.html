@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Currency Converter</title>
+    <link rel="stylesheet" href="currency.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
+    <body>
+        <div class="converter-container animate__animated animate__fadeInUp">
+            <div class="header">
+                <h1>Global Currency Converter</h1>
+                <p>Convert between 150+ currencies with real-time rates</p>
+            </div>
+    
+            <div class="converter-form">
+                <div class="input-group">
+                    <label for="amount">Amount</label>
+                    <div class="input-field">
+                        <input type="number" id="amount" placeholder="Enter amount" value="1" min="0" step="0.01">
+                        <span class="currency-symbol" id="from-currency-symbol">$</span>
+                    </div>
+                </div>
+    
+                <div class="input-group">
+                    <label for="from-currency">From</label>
+                    <div class="input-field">
+                        <select id="from-currency">
+                            <!-- Options will be added by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+    
+                <button class="swap-btn" id="swap-btn">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+    
+                <div class="input-group">
+                    <label for="to-currency">To</label>
+                    <div class="input-field">
+                        <select id="to-currency">
+                            <!-- Options will be added by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+    
+                <button id="convert-btn" class="convert-btn">Convert</button>
+    
+                <div class="result" id="result">
+                    <div class="flags">
+                        <div class="flag" id="from-flag">
+                            <img src="https://flagcdn.com/w80/us.png" alt="From Flag">
+                        </div>
+                        <div class="flag" id="to-flag">
+                            <img src="https://flagcdn.com/w80/eu.png" alt="To Flag">
+                        </div>
+                    </div>
+                    <h3>Conversion Result</h3>
+                    <div class="result-value" id="result-value">0.00</div>
+                    <div class="rate-info" id="rate-info">1 USD = 0.85 EUR</div>
+                </div>
+            </div>
+        </div>
+        </body>
+        <script src="currency.js"></script>
+        </html>

@@ -1,0 +1,385 @@
+/* General Body and Typography */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    /* Using Inter font */
+    background-color: #f0f2f5;
+    /* Light background for the main page */
+    color: #333;
+    min-height: 100vh;
+    /* Ensure body takes full viewport height for footer positioning */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content Styling to push footer down */
+.main-content {
+    flex-grow: 1;
+    /* Allows main content to take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    /* White background for content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.main-content h1 {
+    font-size: 2.8em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.main-content p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.animation-demo-box {
+    background-color: #e6e9ee;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #34495e;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite alternate;
+    /* Simple pulse animation */
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.02);
+        opacity: 0.95;
+    }
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #2c3e50;
+    /* Dark blue-grey */
+    color: #ecf0f1;
+    /* Light off-white */
+    padding: 40px 20px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow for depth */
+    position: relative;
+    overflow: hidden;
+    /* Ensures animations stay within the footer bounds */
+    border-top-left-radius: 15px;
+    /* Rounded corners for the top of the footer */
+    border-top-right-radius: 15px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows sections to wrap on smaller screens */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    /* Space between sections */
+}
+
+.footer-section {
+    flex: 1;
+    /* Allows sections to grow and shrink */
+    min-width: 250px;
+    /* Minimum width before wrapping */
+    padding: 15px;
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+}
+
+.footer-section h3 {
+    color: #3498db;
+    /* Bright blue for headings */
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    position: relative;
+    padding-bottom: 8px;
+    /* More space for the underline */
+    font-weight: 700;
+}
+
+/* Underline animation for headings */
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    /* Slightly longer underline */
+    height: 3px;
+    background-color: #e74c3c;
+    /* Red accent for underline */
+    border-radius: 2px;
+    transition: width 0.3s ease-out;
+    /* Animation for width change */
+}
+
+.footer-section h3:hover::after {
+    width: 80px;
+    /* Expand on hover */
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #bdc3c7;
+    /* Lighter grey for links */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: block;
+    /* Make the whole area clickable */
+    padding: 5px 0;
+    font-weight: 400;
+}
+
+.footer-section ul li a:hover {
+    color: #ecf0f1;
+    /* White on hover */
+    transform: translateX(5px);
+    /* Slight slide animation */
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: #ecf0f1;
+    font-size: 1.8em;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    /* Lift and scale on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    /* Deeper shadow */
+}
+
+/* Specific social icon colors on hover */
+.social-icon.facebook:hover {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.social-icon.twitter:hover {
+    background-color: #00acee;
+    color: #fff;
+}
+
+.social-icon.instagram:hover {
+    background-image: linear-gradient(to right top, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    color: #fff;
+}
+
+.social-icon.linkedin:hover {
+    background-color: #0e76a8;
+    color: #fff;
+}
+
+
+/* Country Info Section */
+.country-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.country-display:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Slight background on hover */
+}
+
+.flag-icon {
+    width: 45px;
+    /* Slightly larger flag */
+    height: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-out, border-color 0.3s ease;
+}
+
+.country-display:hover .flag-icon {
+    transform: scale(1.08);
+    /* Pop out slightly on hover */
+    border-color: #3498db;
+    /* Blue border on hover */
+}
+
+#country-name {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #ecf0f1;
+}
+
+.small-text {
+    font-size: 0.85em;
+    color: #bdc3c7;
+    margin-top: 10px;
+}
+
+.country-selector {
+    width: 100%;
+    padding: 10px 15px;
+    /* More padding */
+    margin-top: 15px;
+    border-radius: 8px;
+    /* More rounded */
+    border: 1px solid #34495e;
+    background-color: #34495e;
+    color: #ecf0f1;
+    font-size: 1em;
+    appearance: none;
+    /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Custom SVG arrow for dropdown */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ecf0f1" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.country-selector:hover {
+    background-color: #3f5872;
+    /* Slightly lighter background on hover */
+}
+
+.country-selector:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+    /* Blue glow on focus */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    /* More padding */
+    margin-top: 35px;
+    /* More margin */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle separator line */
+    font-size: 0.9em;
+    color: #bdc3c7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        /* Stack sections vertically */
+        align-items: center;
+        /* Center items when stacked */
+        gap: 40px;
+        /* Increase gap between stacked sections */
+    }
+
+    .footer-section {
+        min-width: 90%;
+        /* Take almost full width */
+        text-align: center;
+        /* Center text in sections */
+    }
+
+    .footer-section h3 {
+        text-align: center;
+    }
+
+    /* Center the underline for headings */
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+        /* Center social icons */
+    }
+
+    .country-display {
+        justify-content: center;
+        /* Center country flag and name */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 15px;
+        /* Reduce padding on very small screens */
+    }
+
+    .footer-section {
+        padding: 10px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3em;
+    }
+
+    .social-icon {
+        font-size: 1.5em;
+        width: 40px;
+        height: 40px;
+    }
+
+    .flag-icon {
+        width: 40px;
+        height: 27px;
+    }
+
+    #country-name {
+        font-size: 1em;
+    }
+
+    .country-selector {
+        padding: 8px 10px;
+    }
+}
